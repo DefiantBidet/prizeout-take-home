@@ -1,0 +1,61 @@
+
+.offer-options {
+
+    &__grid {
+        column-gap: 0.625rem;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 1fr;
+        row-gap: 0.625rem;
+
+        &__button {
+            border: none;
+            color: var(--color-rgb);
+            cursor: pointer;
+            border-radius: 0.5rem;
+            line-height: 2rem;
+            font-size: 0.75rem;
+
+            &--selected {
+                background-color: var(--color-primary);
+                color: var(--color-white);
+                cursor: unset;
+
+                &:hover {
+                    background-color: var(--color-primary) !important; // stops hover highlight of selected
+                    color: var(--color-white);
+                }
+
+            }
+
+            &:focus {
+                box-shadow: none;
+                border-radius: 0.5rem;
+            }
+
+            &:hover {
+                background-color: var(--color-blue-400);
+                color: var(--color-white);
+            }
+        }
+    }
+
+    &__details {
+        color: var(--color-rgb);
+        display: flex;
+        flex-direction: column;
+
+        &__row {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        &__row-highlight {
+            color: var(--color-blue-500);
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    }
+}

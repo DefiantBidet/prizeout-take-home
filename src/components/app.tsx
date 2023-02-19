@@ -1,17 +1,19 @@
 import * as React from 'react';
-import { Loader } from './common';
-import { Widget } from '../modules/widget';
-import { windowResizeHandler } from '../utils/event-handlers';
+import { useLayoutEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { AppDispatch } from '../store';
-import { useAppSelector } from '../hooks';
+
+import { Widget } from 'Modules/widget';
 import {
     selectIsCheckoutPanelCollapsed,
     selectIsMobilePortrait,
     setIsCheckoutPanelCollapsed,
     setIsMobilePortrait,
-} from '../slices/common-slice';
-import { useLayoutEffect } from 'react';
+} from 'Slices/common-slice';
+import { AppDispatch } from 'SourceRoot/store';
+import { useAppSelector } from 'SourceRoot/hooks';
+import { windowResizeHandler } from 'Utils/event-handlers';
+
+import { Loader } from './common';
 
 import './app.less';
 

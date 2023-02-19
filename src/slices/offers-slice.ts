@@ -1,8 +1,9 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { RootState } from '../store';
 
 // Define a type for the slice state
 export interface OffersState {
+    activeOffer?: PrizeoutOffer;
     offers?: PrizeoutOffers;
 }
 
@@ -687,7 +688,7 @@ export type PrizeoutOffer = {
     tag: string;
 };
 
-type PrizeoutOfferValueOptions = {
+export type PrizeoutOfferValueOptions = {
     checkout_value_id: string;
     cost_in_cents: number;
     display_bonus?: number;
@@ -702,8 +703,16 @@ type OffersRequest = {
 export const offersSlice = createSlice({
     initialState: offersInitialState,
     name: 'offers',
-    reducers: {},
+    reducers: {
+        setActiveOffer(state, action: PayloadAction<PrizeoutOffer>) {
+            state.activeOffer = action.payload;
+        },
+    },
 });
+
+export const { setActiveOffer } = offersSlice.actions;
+
+export const getActiveOffer = ({ offers: { activeOffer } }: RootState): PrizeoutOffer => activeOffer;
 
 export const selectOffers = ({ offers }: RootState): PrizeoutOffers => offers.offers;
 

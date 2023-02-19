@@ -1,5 +1,6 @@
 {
     "compilerOptions": {
+      "baseUrl": ".",
       "outDir": "./dist/",
       "noImplicitAny": true,
       "module": "es6",
@@ -11,7 +12,15 @@
       "esModuleInterop" : true,
       "sourceMap": true,
       "inlineSources": true,
-      "sourceRoot": "/",
-      "typeRoots": ["./types", "./node_modules/@types"]
+      "typeRoots": ["./types", "./node_modules/@types"],
+      "paths": {
+        "*": ["node_modules/*", "src/*"],
+        "Components/*": ["src/components/*"],
+        "Modules/*": ["src/modules/*"],
+        "Slices/*": ["src/slices/*"],
+        "SourceRoot/*": ["src/*"],
+        "Testing/*": ["src/testing/*"],
+        "Utils/*": ["src/utils/*"],
+      },
     }
   }

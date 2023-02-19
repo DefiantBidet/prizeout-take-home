@@ -1,12 +1,14 @@
 import React from 'react';
 import Classnames from 'classnames';
-import { PrizeoutOffer, PrizeoutOfferSettings } from '../../../../../slices/offers-slice';
-import { OfferGiftCard } from '../offer-gift-card/offer-gift-card';
-import { useAppSelector } from '../../../../../hooks';
-import { selectIsCheckoutPanelCollapsed } from '../../../../../slices/common-slice';
 import { useDispatch } from 'react-redux';
-import { AppDispatch } from '../../../../../store';
-import { toggleIsCollapsedCheckoutPanelOpen } from '../../../../../slices/checkout-slice';
+
+import { PrizeoutOffer, PrizeoutOfferSettings, setActiveOffer } from 'Slices/offers-slice';
+import { useAppSelector } from 'SourceRoot/hooks';
+import { selectIsCheckoutPanelCollapsed } from 'Slices/common-slice';
+import { AppDispatch } from 'SourceRoot/store';
+import { toggleIsCollapsedCheckoutPanelOpen } from 'Slices/checkout-slice';
+
+import { OfferGiftCard } from '../offer-gift-card/offer-gift-card';
 
 import './vertical-offers.less';
 
@@ -22,6 +24,8 @@ const VerticalOffers: React.FC<OfferView> = ({ offers, viewSettings }): React.Re
     const dispatch = useDispatch<AppDispatch>();
 
     const offerClickHandler = (offer: PrizeoutOffer) => {
+        dispatch(setActiveOffer(offer));
+
         if (isCheckoutPanelCollapsedView) {
             dispatch(toggleIsCollapsedCheckoutPanelOpen());
         }
@@ -29,11 +33,7 @@ const VerticalOffers: React.FC<OfferView> = ({ offers, viewSettings }): React.Re
 
     const returnOffers = () => {
         return offers.map((offer) => (
-            <OfferGiftCard
-                key={`${heading}-${offer.name}`}
-                offer={offer}
-                onClickHandler={() => offerClickHandler(offer)}
-            />
+            <OfferGiftCard key={`${heading}-${offer.name}`} offer={offer} onClickHandler={offerClickHandler} />
         ));
     };
 
