@@ -25,6 +25,12 @@ export const OfferGiftCard: React.FC<OfferGiftCardProps> = ({ offer, onClickHand
         'offer-gift-card--selected': activeOfferId === firstCardOfferId,
     });
 
+    /**
+     * Click handler for selecting an offer either via mouse or keyboard.
+     * @param  {React.SyntheticEvent<HTMLElement>} event Event fired from selecting an offer
+     * @return {void}
+     * @function
+     */
     const onSelectOffer = (event: React.SyntheticEvent<HTMLElement>) => {
         event.stopPropagation();
         event.preventDefault();
@@ -32,6 +38,12 @@ export const OfferGiftCard: React.FC<OfferGiftCardProps> = ({ offer, onClickHand
         onClickHandler(offer);
     };
 
+    /**
+     * Keyboard event handler for selecting an offer - invokes `onSelectOffer`
+     * @param  {React.KeyboardEvent<HTMLElement>} event KeyboardEvent captured by handler
+     * @return {void}
+     * @function
+     */
     const selectOfferOnEnter = (event: React.KeyboardEvent<HTMLElement>) => {
         if (event.key === 'Enter') {
             onSelectOffer(event);

@@ -38,10 +38,21 @@ const CheckoutPanelView: React.FC = (): React.ReactElement => {
         dispatch(setSelectedOfferOption(firstOption));
     }, [activeOffer]);
 
+    /**
+     * Click Handler to dispatch state change event when an offer is selected.
+     * @param  {PrizeoutOfferValueOptions}  offerOption Selected Offer Option
+     * @return {void}
+     * @function
+     */
     const onSelectOffer = (offerOption: PrizeoutOfferValueOptions) => {
         dispatch(setSelectedOfferOption(offerOption));
     };
 
+    /**
+     * Renders Selected Card information and the CheckoutOfferOptions Component
+     * @return {JSX.Element} DOM Nodes containing Offer options
+     * @function
+     */
     const displayRedeemOptions = (): JSX.Element => (
         <div className="checkout__options">
             <div className="checkout__options__card">
@@ -67,7 +78,9 @@ const CheckoutPanelView: React.FC = (): React.ReactElement => {
                     </section>
                 </div>
                 <div className="grid__item">
-                    <section className="checkout__calculation">{activeOffer && <CheckoutButton />}</section>
+                    <section className="checkout__calculation">
+                        {activeOffer && <CheckoutButton activeOffer={activeOffer} selectedOption={selectedOption} />}
+                    </section>
                 </div>
             </div>
         </section>

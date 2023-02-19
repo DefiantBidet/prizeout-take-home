@@ -1,20 +1,24 @@
 
 .offer-options {
+    margin-top: 1.25rem;
 
     &__grid {
         column-gap: 0.625rem;
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         grid-template-rows: 1fr;
+        margin-top: 0.75rem;
         row-gap: 0.625rem;
 
         &__button {
+            background-color: var(--color-grey-300);
             border: none;
             color: var(--color-rgb);
             cursor: pointer;
             border-radius: 0.5rem;
             line-height: 2rem;
             font-size: 0.75rem;
+            font-weight: 700;
 
             &--selected {
                 background-color: var(--color-primary);
@@ -41,9 +45,15 @@
     }
 
     &__details {
+        border: 1px solid var(--color-grey-300);
+        border-radius: 0.5rem;
         color: var(--color-rgb);
         display: flex;
         flex-direction: column;
+        font-weight: 700;
+        line-height: 1.5rem;
+        margin-top: 1rem;
+        padding: 1rem;
 
         &__row {
             display: flex;
