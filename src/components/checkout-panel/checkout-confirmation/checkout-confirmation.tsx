@@ -3,7 +3,9 @@ import PropTypes from 'prop-types';
 import checkoutPanelViewWrapper, { SetViewProps } from '../view-wrapper';
 import './checkout-confirmation.less';
 
-const CheckoutConfirmationPanelView: React.FC<SetViewProps> = ({ setView }): React.ReactElement => {
+const CheckoutConfirmationPanelView: React.FC<SetViewProps> = ({
+    setView,
+}): React.ReactElement => {
     return (
         <section className="checkout-confirmation">
             <h2>Checkout Confirmation Panel</h2>
@@ -16,4 +18,7 @@ CheckoutConfirmationPanelView.propTypes = {
     setView: PropTypes.func,
 };
 
-export default checkoutPanelViewWrapper(CheckoutConfirmationPanelView, 'checkout-confirmation');
+export default checkoutPanelViewWrapper(
+    CheckoutConfirmationPanelView,
+    'checkout-confirmation',
+);

@@ -10,7 +10,11 @@ interface BonusTagProps {
     value: number;
 }
 
-export const BonusTag: React.FC<BonusTagProps> = ({ type, value, size }): React.ReactElement => {
+export const BonusTag: React.FC<BonusTagProps> = ({
+    type,
+    value,
+    size,
+}): React.ReactElement => {
     const classes: string = Classnames(
         `bonus-tag`,
         { monetary: type === 'monetary' },

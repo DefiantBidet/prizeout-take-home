@@ -27,7 +27,10 @@ const AllTheProviders = (store: EnhancedStore) =>
         );
     };
 
-const customRender = (ui: React.ReactElement, options: CustomRenderOptions = {}): RenderResult => {
+const customRender = (
+    ui: React.ReactElement,
+    options: CustomRenderOptions = {},
+): RenderResult => {
     if ('route' in options) {
         window.history.pushState({}, '', options.route);
     }

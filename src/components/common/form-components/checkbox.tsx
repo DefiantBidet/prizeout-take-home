@@ -12,14 +12,24 @@ interface CheckboxProps {
     title: string;
 }
 
-export const Checkbox: React.FC<CheckboxProps> = ({ content, id, isRequired, register, title }): React.ReactElement => {
+export const Checkbox: React.FC<CheckboxProps> = ({
+    content,
+    id,
+    isRequired,
+    register,
+    title,
+}): React.ReactElement => {
     const [isChecked, setIsChecked] = useState(false),
         toggleChecked = (): void => setIsChecked(!isChecked),
         elmId = id || `checkbox-${uuid_v4()}`;
 
     return (
         <Fragment>
-            <label data-testid="checkbox-label" className="checkbox" htmlFor={elmId}>
+            <label
+                data-testid="checkbox-label"
+                className="checkbox"
+                htmlFor={elmId}
+            >
                 <input
                     data-testid="checkbox-input"
                     id={elmId}
@@ -37,7 +47,10 @@ export const Checkbox: React.FC<CheckboxProps> = ({ content, id, isRequired, reg
                     aria-checked={isChecked}
                     aria-labelledby={elmId}
                 >
-                    <small data-testid="checkbox-description" dangerouslySetInnerHTML={{ __html: content }}></small>
+                    <small
+                        data-testid="checkbox-description"
+                        dangerouslySetInnerHTML={{ __html: content }}
+                    ></small>
                 </span>
             </label>
         </Fragment>

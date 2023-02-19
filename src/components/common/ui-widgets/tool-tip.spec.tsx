@@ -11,7 +11,9 @@ describe('Test Tool Tip Component', () => {
     const id = 'fakeTip';
 
     test('Component matches snapshot', () => {
-        const { asFragment } = render(<ToolTip content={content} id={id} title={title} />);
+        const { asFragment } = render(
+            <ToolTip content={content} id={id} title={title} />,
+        );
         expect(asFragment()).toMatchSnapshot();
     });
 

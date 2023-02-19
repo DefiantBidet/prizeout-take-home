@@ -63,7 +63,10 @@ export const Button: React.FC<ButtonProps> = ({
 
             {isLoading && (
                 <div className="button__icon-wrapper">
-                    <i data-testid="button-loading" className="fas fa-spinner fa-spin"></i>
+                    <i
+                        data-testid="button-loading"
+                        className="fas fa-spinner fa-spin"
+                    ></i>
                 </div>
             )}
         </button>

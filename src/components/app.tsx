@@ -19,11 +19,17 @@ import './app.less';
 
 export const App: React.FC = (): React.ReactElement => {
     const dispatch = useDispatch<AppDispatch>();
-    const isCheckoutPanelCollapsedView = useAppSelector(selectIsCheckoutPanelCollapsed);
+    const isCheckoutPanelCollapsedView = useAppSelector(
+        selectIsCheckoutPanelCollapsed,
+    );
     const isMobilePortraitView = useAppSelector(selectIsMobilePortrait);
 
     const windowResize = () => {
-        windowResizeHandler(dispatch, isCheckoutPanelCollapsedView, isMobilePortraitView);
+        windowResizeHandler(
+            dispatch,
+            isCheckoutPanelCollapsedView,
+            isMobilePortraitView,
+        );
     };
 
     window.addEventListener('resize', windowResize);

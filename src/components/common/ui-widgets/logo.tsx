@@ -9,7 +9,12 @@ export const Logo: React.FC = (): React.ReactElement => {
 
     return (
         <Fragment>
-            <img data-testid="logo" className={classes} src={imgSrc} alt="Prizeout logo" />
+            <img
+                data-testid="logo"
+                className={classes}
+                src={imgSrc}
+                alt="Prizeout logo"
+            />
         </Fragment>
     );
 };

@@ -15,7 +15,14 @@ const RouterWrapper = ({
 }): JSX.Element => {
     const isLoggedIn: boolean = cookies.get('accessTokenIssued') != null;
     const Component = component;
-    return <Route path={path} render={() => (!isLoggedIn && restricted ? <Redirect to="/" /> : <Component />)} />;
+    return (
+        <Route
+            path={path}
+            render={() =>
+                !isLoggedIn && restricted ? <Redirect to="/" /> : <Component />
+            }
+        />
+    );
 };
 
 export default RouterWrapper;

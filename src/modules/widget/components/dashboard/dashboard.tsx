@@ -9,9 +9,12 @@ import { selectIsCheckoutPanelCollapsed } from '../../../../slices/common-slice'
 import './dashboard.less';
 
 const Dashboard: React.FC = (): React.ReactElement => {
-    const isCheckoutPanelCollapsedView = useAppSelector(selectIsCheckoutPanelCollapsed);
+    const isCheckoutPanelCollapsedView = useAppSelector(
+        selectIsCheckoutPanelCollapsed,
+    );
     const classes = Classnames('dashboard__wrapper', {
-        'dashboard__wrapper--checkout-panel-collapsed-view': isCheckoutPanelCollapsedView,
+        'dashboard__wrapper--checkout-panel-collapsed-view':
+            isCheckoutPanelCollapsedView,
     });
 
     return (

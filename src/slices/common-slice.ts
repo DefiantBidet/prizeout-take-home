@@ -31,15 +31,22 @@ export const commonSlice = createSlice({
     },
 });
 
-export const { setIsCheckoutPanelCollapsed, setIsMobilePortrait, toggleIsLoading } = commonSlice.actions;
+export const {
+    setIsCheckoutPanelCollapsed,
+    setIsMobilePortrait,
+    toggleIsLoading,
+} = commonSlice.actions;
 
 // Other code such as selectors can use the imported `RootState` type
-export const selectLoading = ({ common: { loading } }: RootState): boolean => loading;
+export const selectLoading = ({ common: { loading } }: RootState): boolean =>
+    loading;
 
-export const selectIsCheckoutPanelCollapsed = ({ common: { isCheckoutPanelCollapsedView } }: RootState): boolean =>
-    isCheckoutPanelCollapsedView;
+export const selectIsCheckoutPanelCollapsed = ({
+    common: { isCheckoutPanelCollapsedView },
+}: RootState): boolean => isCheckoutPanelCollapsedView;
 
-export const selectIsMobilePortrait = ({ common: { isMobilePortraitView } }: RootState): boolean =>
-    isMobilePortraitView;
+export const selectIsMobilePortrait = ({
+    common: { isMobilePortraitView },
+}: RootState): boolean => isMobilePortraitView;
 
 export default commonSlice.reducer;

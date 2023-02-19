@@ -10,9 +10,14 @@ interface CopyContentProps {
     title: string;
 }
 
-export const CopyContent: React.FC<CopyContentProps> = ({ content, title }): React.ReactElement => {
+export const CopyContent: React.FC<CopyContentProps> = ({
+    content,
+    title,
+}): React.ReactElement => {
     const [contentCopied, setContentCopied] = useState(false),
-        classes: string = Classnames('copy-container', { 'copy-success': contentCopied }),
+        classes: string = Classnames('copy-container', {
+            'copy-success': contentCopied,
+        }),
         copyContent = () => {
             if (copiedTimer) {
                 clearTimeout(copiedTimer);

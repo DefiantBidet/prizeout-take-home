@@ -17,7 +17,9 @@ describe('Test Copy Component', () => {
     });
 
     test('Component matches snapshot', () => {
-        const { asFragment } = render(<CopyContent content={content} title={title} />);
+        const { asFragment } = render(
+            <CopyContent content={content} title={title} />,
+        );
         expect(asFragment()).toMatchSnapshot();
     });
 

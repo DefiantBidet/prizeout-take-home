@@ -11,7 +11,11 @@ interface CollapsiblePanelProps {
     title: string;
 }
 
-export const CollapsiblePanel: React.FC<CollapsiblePanelProps> = ({ content, id, title }): React.ReactElement => {
+export const CollapsiblePanel: React.FC<CollapsiblePanelProps> = ({
+    content,
+    id,
+    title,
+}): React.ReactElement => {
     const [isOpen, setIsOpen] = useState(false),
         togglePanel = (): void => setIsOpen(!isOpen),
         classes: string = Classnames('collapsible-panel', { open: isOpen }),
@@ -19,10 +23,18 @@ export const CollapsiblePanel: React.FC<CollapsiblePanelProps> = ({ content, id,
 
     return (
         <div className={classes}>
-            <header aria-controls={elmId} aria-expanded={isOpen ? 'true' : 'false'} onClick={togglePanel} tabIndex={0}>
+            <header
+                aria-controls={elmId}
+                aria-expanded={isOpen ? 'true' : 'false'}
+                onClick={togglePanel}
+                tabIndex={0}
+            >
                 {title}
             </header>
-            <article dangerouslySetInnerHTML={{ __html: content }} id={elmId}></article>
+            <article
+                dangerouslySetInnerHTML={{ __html: content }}
+                id={elmId}
+            ></article>
         </div>
     );
 };

@@ -13,6 +13,8 @@ describe('Test Footer Component', () => {
     test('No TOS is shown unless on gift card details page', () => {
         render(<Footer />);
 
-        expect(screen.queryByText('Terms and Conditions')).not.toBeInTheDocument();
+        expect(
+            screen.queryByText('Terms and Conditions'),
+        ).not.toBeInTheDocument();
     });
 });
