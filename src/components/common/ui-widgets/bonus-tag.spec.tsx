@@ -6,9 +6,7 @@ import { BonusTag } from './bonus-tag';
 
 describe('Test Bonus Tag Component', () => {
     test('Component matches snapshot', () => {
-        const { asFragment } = render(
-            <BonusTag type="percentage" value={15.0} />,
-        );
+        const { asFragment } = render(<BonusTag type="percentage" value={15.0} />);
         expect(asFragment()).toMatchSnapshot();
     });
 
@@ -20,9 +18,7 @@ describe('Test Bonus Tag Component', () => {
     });
 
     test('Percentage bonus displayed correctly', () => {
-        const { container } = render(
-            <BonusTag type="percentage" value={15.1} />,
-        );
+        const { container } = render(<BonusTag type="percentage" value={15.1} />);
 
         expect(screen.queryByText('15.1%')).toBeInTheDocument();
         expect(container.getElementsByClassName('monetary').length).toBe(0);

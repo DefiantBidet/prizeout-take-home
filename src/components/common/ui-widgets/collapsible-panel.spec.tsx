@@ -10,9 +10,7 @@ describe('Test Collapsible Panel Component', () => {
     const title = `Collapsible Panel Title`;
 
     test('Component matches snapshot', () => {
-        const { asFragment } = render(
-            <CollapsiblePanel content={content} title={title} id="test-cp" />,
-        );
+        const { asFragment } = render(<CollapsiblePanel content={content} title={title} id="test-cp" />);
         expect(asFragment()).toMatchSnapshot();
     });
 

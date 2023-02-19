@@ -2,15 +2,8 @@ import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 
 import { GiftCardImage } from 'Components/common/ui-widgets/gift-card-image';
-import {
-    PrizeoutOffer,
-    PrizeoutOfferValueOptions,
-    getActiveOffer,
-} from 'Slices/offers-slice';
-import {
-    getSelectedOfferOption,
-    setSelectedOfferOption,
-} from 'Slices/checkout-slice';
+import { PrizeoutOffer, PrizeoutOfferValueOptions, getActiveOffer } from 'Slices/offers-slice';
+import { getSelectedOfferOption, setSelectedOfferOption } from 'Slices/checkout-slice';
 import { useAppSelector } from 'SourceRoot/hooks';
 import { AppDispatch } from 'SourceRoot/store';
 
@@ -37,9 +30,7 @@ const getOfferHeader = (activeOffer: PrizeoutOffer): string => {
 
 const CheckoutPanelView: React.FC = (): React.ReactElement => {
     const activeOffer: PrizeoutOffer = useAppSelector(getActiveOffer);
-    const selectedOption: PrizeoutOfferValueOptions = useAppSelector(
-        getSelectedOfferOption,
-    );
+    const selectedOption: PrizeoutOfferValueOptions = useAppSelector(getSelectedOfferOption);
     const dispatch = useDispatch<AppDispatch>();
 
     useEffect(() => {
@@ -54,10 +45,7 @@ const CheckoutPanelView: React.FC = (): React.ReactElement => {
     const displayRedeemOptions = (): JSX.Element => (
         <div className="checkout__options">
             <div className="checkout__options__card">
-                <GiftCardImage
-                    imgUrl={activeOffer.image_url}
-                    altText={activeOffer.name}
-                />
+                <GiftCardImage imgUrl={activeOffer.image_url} altText={activeOffer.name} />
             </div>
             {selectedOption && (
                 <CheckoutOfferOptions
@@ -79,9 +67,7 @@ const CheckoutPanelView: React.FC = (): React.ReactElement => {
                     </section>
                 </div>
                 <div className="grid__item">
-                    <section className="checkout__calculation">
-                        {activeOffer && <CheckoutButton />}
-                    </section>
+                    <section className="checkout__calculation">{activeOffer && <CheckoutButton />}</section>
                 </div>
             </div>
         </section>

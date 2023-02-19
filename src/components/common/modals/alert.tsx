@@ -9,19 +9,11 @@ interface AlertProps {
     type: 'error' | 'warning' | 'success' | undefined;
 }
 
-export const Alert: React.FC<AlertProps> = ({
-    message,
-    type,
-}): React.ReactElement => {
+export const Alert: React.FC<AlertProps> = ({ message, type }): React.ReactElement => {
     const classes: string = Classnames(`alert`, `alert--${type}`);
 
     return (
-        <div
-            data-testid="alert-icon"
-            className={classes}
-            role="alert"
-            aria-atomic="true"
-        >
+        <div data-testid="alert-icon" className={classes} role="alert" aria-atomic="true">
             <span className="alert__icon"></span>
             <p className="alert__message">{message}</p>
         </div>

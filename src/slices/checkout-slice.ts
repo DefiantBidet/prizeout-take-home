@@ -24,15 +24,11 @@ export const checkoutSlice = createSlice({
         setCheckoutView(state, action: PayloadAction<ViewEnum>) {
             state.view = action.payload;
         },
-        setSelectedOfferOption(
-            state,
-            action: PayloadAction<PrizeoutOfferValueOptions>,
-        ) {
+        setSelectedOfferOption(state, action: PayloadAction<PrizeoutOfferValueOptions>) {
             state.selectedOfferOption = action.payload;
         },
         toggleIsCollapsedCheckoutPanelOpen(state) {
-            state.isCollapsedCheckoutPanelOpen =
-                !state.isCollapsedCheckoutPanelOpen;
+            state.isCollapsedCheckoutPanelOpen = !state.isCollapsedCheckoutPanelOpen;
         },
         toggleIsLoading(state) {
             state.loading = !state.loading;
@@ -40,23 +36,15 @@ export const checkoutSlice = createSlice({
     },
 });
 
-export const {
-    setCheckoutView,
-    setSelectedOfferOption,
-    toggleIsCollapsedCheckoutPanelOpen,
-    toggleIsLoading,
-} = checkoutSlice.actions;
+export const { setCheckoutView, setSelectedOfferOption, toggleIsCollapsedCheckoutPanelOpen, toggleIsLoading } =
+    checkoutSlice.actions;
 
-export const selectLoading = ({ checkout: { loading } }: RootState): boolean =>
-    loading;
+export const selectLoading = ({ checkout: { loading } }: RootState): boolean => loading;
 
-export const selectCheckoutView = ({
-    checkout: { view },
-}: RootState): ViewEnum => view;
+export const selectCheckoutView = ({ checkout: { view } }: RootState): ViewEnum => view;
 
-export const getSelectedOfferOption = ({
-    checkout: { selectedOfferOption },
-}: RootState): PrizeoutOfferValueOptions => selectedOfferOption;
+export const getSelectedOfferOption = ({ checkout: { selectedOfferOption } }: RootState): PrizeoutOfferValueOptions =>
+    selectedOfferOption;
 
 export const selectIsCollapsedCheckoutPanelOpen = ({
     checkout: { isCollapsedCheckoutPanelOpen },

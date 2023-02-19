@@ -13,13 +13,9 @@ describe('Test Back Button Component', () => {
     });
 
     test('Component orientation is correct', () => {
-        const { container } = render(
-            <BackButton orientation="right" onClick={onClick} />,
-        );
+        const { container } = render(<BackButton orientation="right" onClick={onClick} />);
 
-        expect(
-            container.getElementsByClassName('far fa-chevron-right').length,
-        ).toBe(1);
+        expect(container.getElementsByClassName('far fa-chevron-right').length).toBe(1);
     });
 
     test('Component can call onClick', () => {

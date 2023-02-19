@@ -14,13 +14,7 @@ interface GiftCardProps {
     value?: number;
 }
 
-export const GiftCard: React.FC<GiftCardProps> = ({
-    name,
-    value,
-    imgUrl,
-    altText,
-    className,
-}): React.ReactElement => {
+export const GiftCard: React.FC<GiftCardProps> = ({ name, value, imgUrl, altText, className }): React.ReactElement => {
     const classes: string = Classnames('gift-card', className),
         imageUrl = imgUrl || constants.defaultGiftCardUrl,
         imageAltText = altText || 'Gift Card';

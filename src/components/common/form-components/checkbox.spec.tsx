@@ -13,73 +13,35 @@ describe('Test Checkbox Component', () => {
 
     // Matches snapshot
     test('Component matches snapshot', () => {
-        const { asFragment } = render(
-            <Checkbox
-                content={content}
-                id={id}
-                isRequired={isRequired}
-                title={title}
-            />,
-        );
+        const { asFragment } = render(<Checkbox content={content} id={id} isRequired={isRequired} title={title} />);
 
         expect(asFragment()).toMatchSnapshot();
     });
 
     // Checkbox has description
     test('Checkbox description is displayed', () => {
-        render(
-            <Checkbox
-                content={content}
-                id={id}
-                isRequired={isRequired}
-                title={title}
-            />,
-        );
+        render(<Checkbox content={content} id={id} isRequired={isRequired} title={title} />);
 
         expect(screen.getByText(content)).toBeVisible();
     });
 
     // Checkbox has type checkbox
     test('Checkbox input has type checkbox', () => {
-        render(
-            <Checkbox
-                content={content}
-                id={id}
-                isRequired={isRequired}
-                title={title}
-            />,
-        );
+        render(<Checkbox content={content} id={id} isRequired={isRequired} title={title} />);
 
-        expect(screen.getByTestId('checkbox-input')).toHaveAttribute(
-            'type',
-            expect.stringContaining('checkbox'),
-        );
+        expect(screen.getByTestId('checkbox-input')).toHaveAttribute('type', expect.stringContaining('checkbox'));
     });
 
     // class of "checkbox"
     test('Checkbox has a class of checkbox', () => {
-        render(
-            <Checkbox
-                content={content}
-                id={id}
-                isRequired={isRequired}
-                title={title}
-            />,
-        );
+        render(<Checkbox content={content} id={id} isRequired={isRequired} title={title} />);
 
         expect(screen.getByTestId('checkbox-label')).toHaveClass('checkbox');
     });
 
     // is Required? aria-required
     test('Checkbox is required', () => {
-        render(
-            <Checkbox
-                content={content}
-                id={id}
-                isRequired={isRequired}
-                title={title}
-            />,
-        );
+        render(<Checkbox content={content} id={id} isRequired={isRequired} title={title} />);
 
         expect(screen.getByTestId('checkbox-input')).toBeRequired();
     });
@@ -93,19 +55,10 @@ describe('Test Checkbox Component', () => {
 
     // Checkbox is checked on click
     test('Checkbox is checked', () => {
-        render(
-            <Checkbox
-                content={content}
-                id={id}
-                isRequired={isRequired}
-                title={title}
-            />,
-        );
+        render(<Checkbox content={content} id={id} isRequired={isRequired} title={title} />);
 
         userEvent.click(screen.getByText(content));
         expect(screen.getByTestId('checkbox-input')).toBeChecked();
-        expect(screen.getByTestId('checkbox-input-control')).toHaveAttribute(
-            'aria-checked',
-        );
+        expect(screen.getByTestId('checkbox-input-control')).toHaveAttribute('aria-checked');
     });
 });

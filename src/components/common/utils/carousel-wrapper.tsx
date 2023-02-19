@@ -6,10 +6,7 @@ interface CarouselWrapperProps {
     container: string;
 }
 
-const CarouselWrapper: React.FC<CarouselWrapperProps> = ({
-    children,
-    container,
-}): React.ReactElement => {
+const CarouselWrapper: React.FC<CarouselWrapperProps> = ({ children, container }): React.ReactElement => {
     useEffect(() => {
         ReactDOM.render(
             <Carousel show={1} slide={1}>

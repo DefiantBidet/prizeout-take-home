@@ -8,11 +8,7 @@ export const Widget: React.FC = (): React.ReactElement => (
     <main className="main-content-wrapper">
         <div className="inner-content-wrapper">
             <Switch>
-                <RouterWrapper
-                    component={Dashboard}
-                    restricted={false}
-                    path="/"
-                />
+                <RouterWrapper component={Dashboard} restricted={false} path="/" />
             </Switch>
         </div>
         <Loader />

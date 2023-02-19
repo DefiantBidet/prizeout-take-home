@@ -12,9 +12,7 @@ describe('Test Overlay Component', () => {
 
     // Matches snapshot
     test('Component matches snapshot', () => {
-        const { asFragment } = render(
-            <Overlay onClick={onClick} zIndexType={zIndexType} />,
-        );
+        const { asFragment } = render(<Overlay onClick={onClick} zIndexType={zIndexType} />);
 
         expect(asFragment()).toMatchSnapshot();
     });

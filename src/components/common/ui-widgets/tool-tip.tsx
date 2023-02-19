@@ -11,11 +11,7 @@ interface ToolTipProps {
     title: string;
 }
 
-export const ToolTip: React.FC<ToolTipProps> = ({
-    content,
-    id,
-    title,
-}): React.ReactElement => {
+export const ToolTip: React.FC<ToolTipProps> = ({ content, id, title }): React.ReactElement => {
     const [isShowing, setIsShowing] = useState(false),
         showToolTip = (): void => setIsShowing(true),
         hideToolTip = (): void => setIsShowing(false),
@@ -44,11 +40,7 @@ export const ToolTip: React.FC<ToolTipProps> = ({
             id={elmId}
             tabIndex={0}
         >
-            <header
-                aria-describedby={contentId}
-                onMouseEnter={showToolTip}
-                onMouseLeave={hideToolTip}
-            >
+            <header aria-describedby={contentId} onMouseEnter={showToolTip} onMouseLeave={hideToolTip}>
                 {title}
             </header>
             <article id={contentId}>{content}</article>

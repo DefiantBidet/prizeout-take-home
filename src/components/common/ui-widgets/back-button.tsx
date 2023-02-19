@@ -9,24 +9,11 @@ interface BackButtonProps {
     orientation?: string;
 }
 
-export const BackButton: React.FC<BackButtonProps> = ({
-    onClick,
-    orientation,
-}): React.ReactElement => {
-    const icon =
-        orientation === 'right'
-            ? 'far fa-chevron-right'
-            : 'far fa-chevron-left';
+export const BackButton: React.FC<BackButtonProps> = ({ onClick, orientation }): React.ReactElement => {
+    const icon = orientation === 'right' ? 'far fa-chevron-right' : 'far fa-chevron-left';
     const ariaLabel = orientation === 'right' ? 'Move forward' : 'Move back';
 
-    return (
-        <Button
-            ariaLabel={ariaLabel}
-            icon={icon}
-            onClick={onClick}
-            className="back-button"
-        />
-    );
+    return <Button ariaLabel={ariaLabel} icon={icon} onClick={onClick} className="back-button" />;
 };
 
 BackButton.propTypes = {

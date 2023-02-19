@@ -9,17 +9,12 @@ interface OverlayProps {
     zIndexType: string;
 }
 
-export const Overlay: React.FC<OverlayProps> = ({
-    zIndexType,
-    onClick,
-}): React.ReactElement => {
+export const Overlay: React.FC<OverlayProps> = ({ zIndexType, onClick }): React.ReactElement => {
     const classes: string = Classnames(`overlay`, {
         [`z-index-${zIndexType}`]: zIndexType,
     });
 
-    return (
-        <div data-testid="overlay" className={classes} onClick={onClick}></div>
-    );
+    return <div data-testid="overlay" className={classes} onClick={onClick}></div>;
 };
 
 Overlay.propTypes = {

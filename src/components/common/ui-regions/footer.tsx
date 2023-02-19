@@ -9,28 +9,17 @@ export const Footer: React.FC = (): React.ReactElement => {
     return (
         <footer className="footer">
             <div className="footer_copyright">
-                <p>
-                    &copy; 2020-{current_year}, Prizeout, Inc. All rights
-                    reserved.
-                </p>
+                <p>&copy; 2020-{current_year}, Prizeout, Inc. All rights reserved.</p>
             </div>
             <ul className="footer__links">
                 <li className="footer__link">
-                    <a
-                        href={`https://${website_domain}/privacy/`}
-                        target="_blank"
-                        rel="noreferrer"
-                    >
+                    <a href={`https://${website_domain}/privacy/`} target="_blank" rel="noreferrer">
                         Privacy Policy
                     </a>
                     &nbsp;|&nbsp;
                 </li>
                 <li className="footer__link">
-                    <a
-                        href={`https://${website_domain}/terms/`}
-                        target="_blank"
-                        rel="noreferrer"
-                    >
+                    <a href={`https://${website_domain}/terms/`} target="_blank" rel="noreferrer">
                         Prizeout Terms of Use
                     </a>
                     &nbsp;|&nbsp;

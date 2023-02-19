@@ -27,10 +27,7 @@ describe('Test Logo Component', () => {
     test('Logo has image source', () => {
         render(<Logo />);
 
-        expect(screen.getByTestId(logoId)).toHaveAttribute(
-            'src',
-            expect.stringContaining(imgSrc),
-        );
+        expect(screen.getByTestId(logoId)).toHaveAttribute('src', expect.stringContaining(imgSrc));
     });
 
     // Logo has alt text

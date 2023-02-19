@@ -1,12 +1,7 @@
 import React from 'react';
 import Classnames from 'classnames';
 import { useAppSelector } from '../../hooks';
-import {
-    selectLoading,
-    selectCheckoutView,
-    setCheckoutView,
-    ViewEnum,
-} from '../../slices/checkout-slice';
+import { selectLoading, selectCheckoutView, setCheckoutView, ViewEnum } from '../../slices/checkout-slice';
 
 import { useDispatch } from 'react-redux';
 import { AppDispatch } from '../../store';
@@ -23,9 +18,7 @@ export function checkoutPanelViewWrapper<P>(
     viewName: ViewEnum,
 ): (props: P) => JSX.Element {
     return (props: P) => {
-        const isCheckoutPanelCollapsedView = useAppSelector(
-            selectIsCheckoutPanelCollapsed,
-        );
+        const isCheckoutPanelCollapsedView = useAppSelector(selectIsCheckoutPanelCollapsed);
         const currentView = useAppSelector(selectCheckoutView);
         const dispatch = useDispatch<AppDispatch>();
         const isCheckoutPanelLoading = useAppSelector(selectLoading);

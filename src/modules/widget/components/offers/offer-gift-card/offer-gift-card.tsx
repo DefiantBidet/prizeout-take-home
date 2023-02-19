@@ -11,10 +11,7 @@ interface OfferGiftCardProps {
     onClickHandler: (offer: PrizeoutOffer) => void;
 }
 
-export const OfferGiftCard: React.FC<OfferGiftCardProps> = ({
-    offer,
-    onClickHandler,
-}): React.ReactElement => {
+export const OfferGiftCard: React.FC<OfferGiftCardProps> = ({ offer, onClickHandler }): React.ReactElement => {
     const activeOffer = useAppSelector(getActiveOffer);
 
     const activeOfferId = activeOffer?.giftcard_list[0].checkout_value_id;
@@ -22,9 +19,7 @@ export const OfferGiftCard: React.FC<OfferGiftCardProps> = ({
     const firstGiftCard = offer.giftcard_list[0];
     const firstCardOfferId = firstGiftCard.checkout_value_id;
 
-    const offerType = firstGiftCard.display_monetary_bonus
-        ? 'monetary'
-        : 'percentage';
+    const offerType = firstGiftCard.display_monetary_bonus ? 'monetary' : 'percentage';
     const offerValue = firstGiftCard.display_bonus;
     const classes: string = Classnames('offer-gift-card', {
         'offer-gift-card--selected': activeOfferId === firstCardOfferId,
@@ -44,20 +39,9 @@ export const OfferGiftCard: React.FC<OfferGiftCardProps> = ({
     };
 
     return (
-        <button
-            className={classes}
-            onClick={onSelectOffer}
-            onKeyDown={selectOfferOnEnter}
-        >
-            <GiftCard
-                name={offer.name}
-                imgUrl={offer.image_url}
-                altText={offer.name}
-                className="offer"
-            />
-            {offerValue > 0 && (
-                <BonusTag type={offerType} value={offerValue} size="small" />
-            )}
+        <button className={classes} onClick={onSelectOffer} onKeyDown={selectOfferOnEnter}>
+            <GiftCard name={offer.name} imgUrl={offer.image_url} altText={offer.name} className="offer" />
+            {offerValue > 0 && <BonusTag type={offerType} value={offerValue} size="small" />}
         </button>
     );
 };
