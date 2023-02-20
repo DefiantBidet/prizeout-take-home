@@ -12,8 +12,8 @@ const checkoutAPI = {
             maximum: 1500,
             minimum: 250,
         };
+        // random inclusive - from MDN docs
         const randomResponseDelay = Math.floor(
-            // random inclusive - from MDN docs
             Math.random() * (waitTimes.maximum - waitTimes.minimum) + waitTimes.minimum,
         );
 

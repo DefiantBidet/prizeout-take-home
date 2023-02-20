@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { useAppSelector } from 'SourceRoot/hooks';
-import { getSelectedOfferOption, getConfirmationId } from 'Slices/checkout-slice';
+import { getConfirmationId } from 'Slices/checkout-slice';
 
 import checkoutPanelViewWrapper, { SetViewProps } from '../view-wrapper';
 
@@ -14,9 +14,7 @@ const CheckoutConfirmationPanelView: React.FC<SetViewProps> = ({ setView }): Rea
     return (
         <section className="checkout-confirmation">
             <h2>Checkout Confirmation Panel</h2>
-            <div>
-                confirmation: {confirmation_id}
-            </div>
+            <div>confirmation: {confirmation_id}</div>
             <button onClick={() => setView('checkout')}>Done</button>
         </section>
     );

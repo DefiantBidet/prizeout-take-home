@@ -9,7 +9,7 @@ exports[`Test Footer Component Component matches snapshot 1`] = `
       class="footer_copyright"
     >
       <p>
-        © 2020-2022, Prizeout, Inc. All rights reserved.
+        © 2020-2023, Prizeout, Inc. All rights reserved.
       </p>
     </div>
     <ul

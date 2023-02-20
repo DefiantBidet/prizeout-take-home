@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test Checkout Confirmation Component Component matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="checkout-panel__view"
+  >
+    <section
+      class="checkout-confirmation"
+    >
+      <h2>
+        Checkout Confirmation Panel
+      </h2>
+      <div>
+        confirmation: 
+      </div>
+      <button>
+        Done
+      </button>
+    </section>
+  </div>
+</DocumentFragment>
+`;

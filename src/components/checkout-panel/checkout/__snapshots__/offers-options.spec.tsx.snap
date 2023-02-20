@@ -1,0 +1,95 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test CheckoutOfferOptions Component Component matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="offer-options"
+  >
+    <h4>
+      Select Redemption Amount
+    </h4>
+    <div
+      class="offer-options__grid"
+    >
+      <button
+        class="offer-options__grid__button offer-options__grid__button--selected"
+        id="offer-0"
+        name="offer-0"
+        type="button"
+      >
+        $0.00
+      </button>
+      <button
+        class="offer-options__grid__button"
+        id="offer-1"
+        name="offer-1"
+        type="button"
+      >
+        $9.80
+      </button>
+      <button
+        class="offer-options__grid__button"
+        id="offer-2"
+        name="offer-2"
+        type="button"
+      >
+        $19.60
+      </button>
+      <button
+        class="offer-options__grid__button"
+        id="offer-3"
+        name="offer-3"
+        type="button"
+      >
+        $29.39
+      </button>
+    </div>
+    <div
+      class="offer-options__details"
+    >
+      <div
+        class="offer-options__details__row"
+      >
+        <div
+          class="offer-options__details__row--label"
+        >
+          Redemption Amount
+        </div>
+        <div
+          class="offer-options__details__row--amount"
+        >
+          $0.00
+        </div>
+      </div>
+      <div
+        class="offer-options__details__row-highlight"
+      >
+        <div
+          class="offer-options__details__row--label"
+        >
+          Prizeout Bonus (+2.04%)
+        </div>
+        <div
+          class="offer-options__details__row--amount"
+        >
+          $0.00
+        </div>
+      </div>
+      <div
+        class="offer-options__details__row"
+      >
+        <div
+          class="offer-options__details__row--label"
+        >
+          You Get
+        </div>
+        <div
+          class="offer-options__details__row--amount"
+        >
+          $0.00
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

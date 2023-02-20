@@ -9,6 +9,7 @@ module.exports = {
         '^Testing/(.*)$': '<rootDir>src/testing/$1',
         '^Utils/(.*)$': '<rootDir>src/utils/$1',
     },
+    roots: ['<rootDir>'],
     setupFiles: ['<rootDir>/src/testing/.jest/jestEnv.js'],
     testEnvironment: 'jsdom',
     transform: {
